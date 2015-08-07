@@ -1,0 +1,12 @@
+%table
+  %thead
+    %tr
+      %th Content
+      %th Created
+      %th Synced
+  %tbody
+    - @scans.each do |scan|
+      %tr
+        %td= scan.content
+        %td= scan.created_at
+        %td= scan.synced_at
