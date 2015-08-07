@@ -1,3 +1,3 @@
 class Scan < ActiveRecord::Base
-  validate :content, presence: true
+  validates :content, presence: true
 end
