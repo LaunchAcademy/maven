@@ -8,6 +8,8 @@ gem "sinatra"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
 gem "sidekiq"
+gem "sidetiq"
+gem "httparty"
 
 group :test, :development do
   gem "capybara"

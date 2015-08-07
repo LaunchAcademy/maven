@@ -6,7 +6,7 @@ while true
   scan = Scan.new(content: content)
   result = scan.save
 
-  File.open("logs/scanner.log", "a") do |file|
+  File.open("log/scanner.log", "a") do |file|
     file.puts "[#{Time.now}] - scan: #{content} persisted?: #{result}"
   end
 end
