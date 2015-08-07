@@ -7,6 +7,7 @@ gem "rake"
 gem "sinatra"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
+gem "sidekiq"
 
 group :test, :development do
   gem "capybara"
