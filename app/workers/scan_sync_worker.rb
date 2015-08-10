@@ -15,7 +15,7 @@ class ScanSyncWorker
     scans = Scan.where(synced_at: nil)
     scans.each do |scan|
       response = HTTParty.post("https://launchpass.launchacademy.com/attendance?scan=#{scan.content}")
-      if resonse.success?
+      if response.success?
         scan.update_attributes(synced_at: Time.now)
       end
     end
