@@ -14,7 +14,7 @@ class ScanSyncWorker
     puts "Got here"
     scans = Scan.where(synced_at: nil)
     scans.each do |scan|
-      response = HTTParty.post("https://launchpass.launchacademy.com/attendance?scan=#{scan.content}")
+      response = HTTParty.post("https://launchpass.launchacademy.com/api/v1/attendance?scan=#{scan.content}")
       if response.success?
         scan.update_attributes(synced_at: Time.now)
       end
