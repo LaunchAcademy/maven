@@ -8,10 +8,9 @@ class ScanSyncWorker
   include Sidekiq::Worker
   include Sidetiq::Schedulable
 
-  recurrence { minutely(1) }
+  recurrence { minutely(5) }
 
   def perform
-    puts "Got here"
     scans = Scan.where(synced_at: nil)
     scans.each do |scan|
       response = HTTParty.post("https://launchpass.launchacademy.com/attendance?scan=#{scan.content}")
